@@ -120,14 +120,25 @@ const start = () => {
     const fM = document.querySelectorAll('.freeModal')
     fM.forEach(fm => {
         fm.addEventListener('click', () => {
-            openFree()
+            openModal('free')
         })
     })
 
-    // Cerrar la modal de prueba gratuita.
-    const cM = document.querySelector('.modalClose')
-    cM.addEventListener('click', () => {
-        closeModal()
+    // Abrir modal de compra.
+    const pM = document.querySelectorAll('.purchaseModal')
+    pM.forEach(pm => {
+        pm.addEventListener('click', () => {
+            openModal('purchase')
+        })
+    })
+
+    // Cerrar todos los modals.
+    const cM = document.querySelectorAll('.modalClose')
+    cM.forEach(cm => {
+        cm.addEventListener('click', () => {
+            closeModal('free')
+            closeModal('purchase')
+        })
     })
 }
 
@@ -147,14 +158,23 @@ const changeOption = () => {
 
 // Modals
 
-let modal = document.querySelector('.modal')
+let modalFree = document.querySelector('.modal#free')
+let modalPurchase = document.querySelector('.modal#purchase')
 
-const closeModal = () => {
-    modal.classList.remove('active')
+const closeModal = who => {
+    if (who === 'free') {
+        modalFree.classList.remove('active')
+    }else {
+        modalPurchase.classList.remove('active')
+    }
 }
 
 // Abrir modal de prueba gratuita.
 
-const openFree = () => {
-    modal.classList.add('active')
+const openModal = who => {
+    if (who === 'free') {
+        modalFree.classList.add('active')
+    }else {
+        modalPurchase.classList.add('active')
+    }
 }
