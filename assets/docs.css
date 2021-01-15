@@ -1,0 +1,45 @@
+#Documentation {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    position: relative
+}
+
+#Documentation > .index {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 25vw;
+    height: fit-content
+}
+
+#Documentation > .index > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#Documentation > .index > ul > li {
+    padding: .5rem;
+    background-color: var(--box);
+    border-bottom: 1px solid var(--bg);
+    cursor: pointer;
+    border-left: 3px solid transparent;
+    transition: .2s ease
+}
+
+#Documentation > .index > ul > li.active {
+    border-left: 3px solid var(--primary);
+    background-color: transparent
+}
+
+#Documentation > .index > ul > li:not(.active):hover {
+    border-left-color: var(--primary);
+}
+
+#Documentation > .content {
+    padding: 0 1rem;
+    width: calc(100% - 25vw)
+}
+
+#Documentation > .content > h2 { margin-top: 0 }
