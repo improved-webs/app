@@ -97,20 +97,27 @@ const start = () => {
     if (downDemo) {
 
         downDemo.addEventListener('click', e => {
+            
             if (downDemo.classList.contains('disabled')) {
                 e.preventDefault()
                 return
             }
-            let href = downDemo.href
     
             downDemo.classList.add('disabled')
             
             msgNotification('Su descarga ha empezado.')
-            downDemo.href = '#!'
+
+            const demoLink = document.createElement('a')
+            demoLink.addEventListener('click', () => {
+                e.preventDefault()
+                alert('Clicked')
+            })
+            demoLink.href = 'https:drive.google.com/uc?export=download&id=1sXn5aJSa0LZvL6llSX_H0h42TGOa6Tk'
+            demoLink.download = 'Improved Demo.apk'
+            demoLink.click()
     
             // Al terminar la notificación:
             setTimeout(() => {
-                downDemo.href = href
                 downDemo.classList.remove('disabled')
             }, 4500)
         })
