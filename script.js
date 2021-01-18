@@ -110,7 +110,6 @@ const start = () => {
             const demoLink = document.createElement('a')
             demoLink.addEventListener('click', () => {
                 e.preventDefault()
-                alert('Clicked')
             })
             demoLink.href = 'https://drive.google.com/uc?export=download&id=1sXn5xaJSa0LZvL6IISX_H0h42TGOa6Tk'
             demoLink.download = 'Improved Demo.apk'
