@@ -112,7 +112,7 @@ const start = () => {
                 e.preventDefault()
                 alert('Clicked')
             })
-            demoLink.href = 'https:drive.google.com/uc?export=download&id=1sXn5aJSa0LZvL6llSX_H0h42TGOa6Tk'
+            demoLink.href = 'https://drive.google.com/uc?export=download&id=1sXn5aJSa0LZvL6llSX_H0h42TGOa6Tk'
             demoLink.download = 'Improved Demo.apk'
             demoLink.click()
     
