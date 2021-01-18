@@ -230,6 +230,7 @@ nav > .btn.purchase:hover > .price > b{
         padding: .5rem;
         border-radius: 12px;
         user-select: none;
+        pointer-events: none;
         opacity: 0;
         z-index: -1;
         transition: .2s ease opacity
@@ -240,6 +241,7 @@ nav > .btn.purchase:hover > .price > b{
     }
 
     #Application .options > .option:hover > .optionText {
+        pointer-events: none;
         opacity: 1;
         z-index: 10;
         user-select: text
