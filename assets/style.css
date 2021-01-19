@@ -21,6 +21,7 @@ html { min-height: 100% }
 
 body {
 
+    width: 100vw;
     max-width: 1440px;
     margin: 0 auto;
     padding:0;
@@ -383,16 +384,27 @@ footer > p {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,.8);
+    width: 100vw;
+    height: 100vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
     opacity: 0;
-    user-select: none;
     z-index: -1;
     transition: .2s opacity
+}
+
+.modalBg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.8);
+    user-select: none;
+    pointer-events: none;
+
 }
 
 .modal.active {
@@ -403,8 +415,8 @@ footer > p {
 
 .modalContent {
     position: relative;
-    width: 80%;
-    min-height: 80%;
+    width: 80vw;
+    min-height: 90vh;
     background-color: var(--bg);
     border-top: 3px solid #bb2424;
     border-right: 3px solid #bb2424;
@@ -457,6 +469,7 @@ footer > p {
     width: 100%;
     opacity: 0;
     user-select: none;
+    pointer-events: none;
     z-index: -1;
     transition: .2s ease opacity;
 
@@ -474,6 +487,8 @@ footer > p {
     border-left: 3px solid var(--primary);
     margin: .5rem 0
 }
+
+.downloadDemo { margin: 0 auto }
 
 /* RWD Mobile */
 
@@ -523,8 +538,19 @@ footer > p {
     .left-20 { left: 0 }
 
     .modalContent {
-        width: 90%;
-        height: 95%
+        width: 95vw;
+        height: 90vh;
+        padding: 1rem 0;
+        justify-content: space-evenly;
+        border-radius: 0;
+        border: none
+    }
+
+    .modalContent > .modalText { padding: 0 1rem }
+
+    .modalContent > .modalClose {
+        top: -16px;
+        right: calc(50% - 16px)
     }
 
     .advantages {
